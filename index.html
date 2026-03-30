@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button onclick="getWeather()">&#9654;</button>
+    </div>
+
+    <p class="error" id="error">City not found. Try again!</p>
+    <p class="loading" id="loading">Fetching weather...</p>
+
+    <div id="weatherData">
+      <div class="weather-icon" id="weatherIcon">🌤️</div>
+      <div class="temp" id="temp">--°C</div>
+      <div class="description" id="desc">Search a city</div>
+      <div class="city-name" id="cityName">--</div>
+
+      <hr class="divider" />
+
+      <div class="details">
+        <div class="detail-item">
+          <span>💧</span>
+          <span class="detail-value" id="humidity">--%</span>
+          <span class="detail-label">Humidity</span>
+        </div>
+
+        <div class="detail-item">
+          <span>🌬️</span>
+          <span class="detail-value" id="wind">-- km/h</span>
+          <span class="detail-label">Wind</span>
+        </div>
+
+        <div class="detail-item">
+          <span>🌡️</span>
+          <span class="detail-value" id="feelsLike">--°C</span>
+          <span class="detail-label">Feels Like</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JS File (later add karna) -->
+  <script src="script.js"></script>
+
+</body>
+</html>
