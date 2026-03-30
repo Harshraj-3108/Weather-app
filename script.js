@@ -1,4 +1,4 @@
-// async function kyunki API call async hota hai
+// async function use kiya kyunki hum API call kar rahe hain (asynchronous operation)
 async function getWeather() {
 
   const cityInput = document.getElementById("cityInput");
@@ -20,7 +20,7 @@ async function getWeather() {
   }
 
   try {
-    // API call
+    // await use kiya kyunki fetch ko time lagta hai (server se data aata hai)
     const response = await fetch(`https://wttr.in/${city}?format=j1`);
     const data = await response.json();
 
@@ -43,7 +43,7 @@ async function getWeather() {
     document.getElementById("wind").innerText = `${wind} km/h`;
     document.getElementById("feelsLike").innerText = `${feelsLike}°C`;
 
-    // 🔥 Weather Icon Logic (NEW FEATURE)
+    // 🔥 Weather Icon Logic 
     const icon = document.getElementById("weatherIcon");
     const condition = data.current_condition[0].weatherDesc[0].value.toLowerCase();
 
@@ -62,11 +62,11 @@ async function getWeather() {
     }
 
   } catch (err) {
-    // better error message
+   
     error.innerText = "❌ City not found. Try again!";
     error.style.display = "block";
   } finally {
-    // loading hide
+    
     loading.style.display = "none";
   }
 }
